@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>CRUD - Registro de Empleados</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+		<a class="navbar-brand p-4" href="#">LOGO</a>
+		<div class="collapse navbar-collapse" id="collapseNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/empleados}">Empleados</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card ">
+				<h1 class="text-center">Registro de empleados</h1>
+			
+			<div class="card-body">
+				<form th:action="@{/empleados}" th:object="${empleado}" method="POST">
+					<div class="form-group">
+						<label>Nombre : </label>
+						<input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="digite el nombre" required>
+					</div>
+					<div class="form-group">
+						<label>Email : </label>
+						<input type="email" name="email" th:field="*{email}" class="form-control" placeholder="digite el email" required>
+					</div>
+					<div class="form-group">
+						<label>Estatus : </label>
+						<input type="text" name="estatus" th:field="*{estatus}" class="form-control" placeholder="que estatus tiene" required>
+					</div>
+					<div class="form-group">
+						<label>Area : </label>
+						<input type="text" name="area" th:field="*{area}" class="form-control" placeholder="que area le asigna" required>
+					</div>
+					<div class="box-footer mt-4">
+						<button class="btn btn-success">Guardar</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
